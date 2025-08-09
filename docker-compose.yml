@@ -6,6 +6,15 @@ services:
     restart: always
     ports:
       - "5678:5678"
+    environment:
+      # ใช้ ${VARIABLE_NAME} เพื่อดึงค่าจาก Railway env
+      - N8N_BASIC_AUTH_ACTIVE=${N8N_BASIC_AUTH_ACTIVE:-true}
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER:-admin}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD:-yourpassword}
+      - N8N_HOST=${N8N_HOST:-0.0.0.0}
+      - N8N_PROTOCOL=${N8N_PROTOCOL:-https}
+      - WEBHOOK_URL=${WEBHOOK_URL:-https://localhost:5678}
+      - PORT=${PORT:-5678}
     volumes:
       - n8n_data:/home/node/.n8n
 
