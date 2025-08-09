@@ -9,4 +9,5 @@ ENV WEBHOOK_URL=${WEBHOOK_URL}
 
 EXPOSE 5678
 
-CMD ["n8n", "start"]
+# ใช้ path เต็มของ n8n หรือใช้ default command
+CMD ["npx", "n8n", "start"]
