@@ -8,6 +8,3 @@ ENV N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD:-yourpassword}
 ENV WEBHOOK_URL=${WEBHOOK_URL}
 
 EXPOSE 5678
-
-# ใช้ path เต็มของ n8n หรือใช้ default command
-CMD ["npx", "n8n", "start"]
